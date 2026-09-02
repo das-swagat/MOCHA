@@ -2,13 +2,13 @@
   "multimocha": {
     "weight": "dales_multimocha_78.72_fp16_storage.pth",
     "paper_single_view_mIoU": 0.7872,
-    "source_checkpoint": "05_runs/dales_mocha/20260816_092455_job2288_dales_pointssm_multimocha_stage3_cont50_lr5e5_from_stage2best/model/model_best.pth",
+    "source_checkpoint": "downstream/dales/multimocha/model_best.pth",
     "source_best_metric_value": 0.7871756819346096
   },
   "targetmocha": {
     "weight": "dales_targetmocha_78.69_fp16_storage.pth",
     "paper_single_view_mIoU": 0.7869,
-    "source_checkpoint": "05_runs/dales_mocha/20260816_092455_job2289_dales_pointssm_targetmocha001_stage3_cont50_lr5e5_from_stage2best/model/model_best.pth",
+    "source_checkpoint": "downstream/dales/targetmocha/model_best.pth",
     "source_best_metric_value": 0.7869088365477195
   }
 }

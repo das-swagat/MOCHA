@@ -3,12 +3,12 @@
     "weight": "semantickitti_baseline_59.26_fp16_storage.pth",
     "paper_mIoU": 0.5926,
     "source_best_metric_value": 0.5925905034481881,
-    "source_checkpoint": "05_runs/semantic_kitti/20260619_121153_semkitti_e20_from_multimocha15k_baseline_patch256_goose/model/model_best.pth"
+    "source_checkpoint": "downstream/semantickitti/multimocha/model_best.pth"
   },
   "targetmocha": {
     "weight": "semantickitti_targetmocha_59.52_fp16_storage.pth",
     "paper_mIoU": 0.5952,
     "source_best_metric_value": 0.5951896763442558,
-    "source_checkpoint": "05_runs/semantic_kitti/20260619_121153_semkitti_e20_from_multimocha15k_targetmocha00025_patch256_goose/model/model_best.pth"
+    "source_checkpoint": "downstream/semantickitti/targetmocha/model_best.pth"
   }
 }

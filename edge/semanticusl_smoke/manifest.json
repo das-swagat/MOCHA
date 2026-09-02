@@ -12,13 +12,13 @@
       "weight": "semanticusl_baseline_23.94_fp16_storage.pth",
       "paper_mIoU": 0.2394,
       "source_best_metric_value": 0.23936456482107088,
-      "source_checkpoint": "05_runs/semanticusl_labeled4/20260612_103557_semanticusl_labeled4_e20_safece_from_multimocha15k_baseline_goose/model/model_best.pth"
+      "source_checkpoint": "downstream/semanticusl/multimocha/model_best.pth"
     },
     "targetmocha": {
       "weight": "semanticusl_targetmocha_24.51_fp16_storage.pth",
       "paper_mIoU": 0.2451,
       "source_best_metric_value": 0.2451313777805739,
-      "source_checkpoint": "05_runs/semanticusl_labeled4/20260613_174315_semanticusl_labeled4_e20_safece_from_multimocha15k_targetmocha0005_goose/model/model_best.pth"
+      "source_checkpoint": "downstream/semanticusl/targetmocha/model_best.pth"
     }
   },
   "runtime": "FP16 storage; FP32-resident model; CUDA autocast FP16",

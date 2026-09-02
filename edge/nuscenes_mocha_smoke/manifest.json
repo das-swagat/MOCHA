@@ -16,7 +16,7 @@
   "validation_preprocessing": "3-sweep aggregation, RandomScale(0.2), GridSample(0.01), NormalizeColor, ToTensor, Collect",
   "runtime": "FP16 storage; FP32-resident model; CUDA autocast FP16",
   "tta": false,
-  "source_checkpoint": "05_runs/transfer_mocha_v3/20260525_114906_mocha_v3_nomaelite_ftcont_e5_sweep3_bs1_lr1e4_goose/model/model_best.pth",
+  "source_checkpoint": "downstream/nuscenes/mocha/model_best.pth",
   "source_checkpoint_sha256": "b6487e1975e71f0983ae17a450d2b6f85d380f2eeff3954f49bc4aac1ade462d",
   "edge_weight_sha256": "ceea5e150a40d8ce8fd3f06c2a497f84e4e43696eaa7af72f55fd16527af258e",
   "edge_weight_bytes": 274711083,
