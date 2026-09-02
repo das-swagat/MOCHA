@@ -1,0 +1,70 @@
+{
+  "dataset": "RELLIS-3D",
+  "sample": "00000_001706",
+  "split": "val",
+  "source_processed_points": 106004,
+  "processed_points": 9000,
+  "sample_selection": "Deterministic linspace-index subset after exact final validation preprocessing.",
+  "feature_layout": "XYZ + strength/intensity",
+  "validation_preprocessing": "RandomScale(0.2), GridSample(0.01), ToTensor, Collect",
+  "models": {
+    "baseline": {
+      "weight": "rellis3d_baseline_26.67_fp16_storage.pth",
+      "paper_mIoU": 0.2667,
+      "source_best_metric_value": 0.26668292859142073,
+      "source_checkpoint": "05_runs/rellis3d/20260614_101936_rellis3d_e20_from_multimocha15k_baseline_goose/model/model_best.pth"
+    },
+    "targetmocha": {
+      "weight": "rellis3d_targetmocha_26.78_fp16_storage.pth",
+      "paper_mIoU": 0.2678,
+      "source_best_metric_value": 0.26781986919722073,
+      "source_checkpoint": "05_runs/rellis3d/20260614_231907_rellis3d_e20_from_multimocha15k_targetmocha005_goose/model/model_best.pth"
+    }
+  },
+  "runtime": "FP16 storage; FP32-resident model; CUDA autocast FP16",
+  "targetmocha_occ_head": "training-only; removed from deployment state",
+  "source_checkpoint_sha256": {
+    "baseline": "472aeef5033253ab0d1dc2dd039d0f254a54159ff9d45138e38c37e1de50f6b9",
+    "targetmocha": "492b814c0acb98b339c88f52479bcd4d9b2c2d49139b58bae35461c6ec69431e"
+  },
+  "edge_weight_sha256": {
+    "baseline": "065174f94a43d44f75bdd0d9e302269c62b247032469fc94777ca8bea9fed4f3",
+    "targetmocha": "b55433364702f03c36bf53c222e3bcbba9a978a4b8cd5f01bd09c315f771ff32"
+  },
+  "edge_weight_bytes": {
+    "baseline": 315692095,
+    "targetmocha": 315706899
+  },
+  "largest_tested_stable_points": 9000,
+  "smallest_tested_unstable_points": 10000,
+  "additional_tested_unstable_points": [
+    18000
+  ],
+  "jetson_validation": {
+    "hardware": "NVIDIA Jetson Orin Nano Super",
+    "power_mode": "25W",
+    "precision": "FP16 CUDA autocast; FP32-resident model",
+    "largest_tested_stable_points": 9000,
+    "smallest_tested_unstable_points": 10000,
+    "baseline": {
+      "paper_mIoU": 0.2667,
+      "parameters": 157734774,
+      "mean_ms": 2111.92,
+      "median_ms": 2111.6,
+      "p95_ms": 2115.824,
+      "fps_from_median": 0.474,
+      "points_per_s": 4262.2,
+      "peak_cuda_MiB": 1242.1
+    },
+    "targetmocha": {
+      "paper_mIoU": 0.2678,
+      "parameters": 157734774,
+      "mean_ms": 2100.417,
+      "median_ms": 2100.243,
+      "p95_ms": 2103.795,
+      "fps_from_median": 0.476,
+      "points_per_s": 4285.2,
+      "peak_cuda_MiB": 1242.1
+    }
+  }
+}

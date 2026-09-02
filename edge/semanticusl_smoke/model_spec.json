@@ -1,0 +1,127 @@
+{
+  "dataset": "SemanticUSL",
+  "num_classes": 19,
+  "backbone_out_channels": 54,
+  "backbone": {
+    "type": "PT-v3m3",
+    "in_channels": 9,
+    "order": [
+      "z",
+      "z-trans",
+      "hilbert",
+      "hilbert-trans"
+    ],
+    "stride": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "enc_depths": [
+      3,
+      3,
+      3,
+      12,
+      3
+    ],
+    "enc_channels": [
+      54,
+      108,
+      216,
+      432,
+      576
+    ],
+    "enc_num_head": [
+      3,
+      6,
+      12,
+      24,
+      32
+    ],
+    "enc_patch_size": [
+      512,
+      512,
+      512,
+      512,
+      512
+    ],
+    "dec_depths": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "dec_channels": [
+      54,
+      108,
+      216,
+      432
+    ],
+    "dec_num_head": [
+      3,
+      6,
+      12,
+      24
+    ],
+    "dec_patch_size": [
+      512,
+      512,
+      512,
+      512
+    ],
+    "mlp_ratio": 4,
+    "qkv_bias": true,
+    "qk_scale": null,
+    "attn_drop": 0.0,
+    "proj_drop": 0.0,
+    "drop_path": 0.3,
+    "shuffle_orders": true,
+    "pre_norm": true,
+    "enable_rpe": false,
+    "enable_flash": false,
+    "upcast_attention": false,
+    "upcast_softmax": false,
+    "traceable": false,
+    "mask_token": false,
+    "enc_mode": false,
+    "freeze_encoder": false,
+    "rope_base": 10,
+    "shift_coords": null,
+    "jitter_coords": 1.1,
+    "rescale_coords": 1.2
+  },
+  "class_names": [
+    "car",
+    "bicycle",
+    "motorcycle",
+    "truck",
+    "other-vehicle",
+    "person",
+    "bicyclist",
+    "motorcyclist",
+    "road",
+    "parking",
+    "sidewalk",
+    "other-ground",
+    "building",
+    "fence",
+    "vegetation",
+    "trunk",
+    "terrain",
+    "pole",
+    "traffic-sign"
+  ],
+  "feature_layout": [
+    "coord_x",
+    "coord_y",
+    "coord_z",
+    "color_0",
+    "color_1",
+    "color_2",
+    "normal_0",
+    "normal_1",
+    "normal_2"
+  ],
+  "dataset_adapter": "SemanticUSLLabeled4ColorNormalDataset",
+  "validation_grid_size": 0.01
+}

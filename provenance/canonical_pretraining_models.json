@@ -1,0 +1,76 @@
+{
+  "schema": "mocha-pretrain-lock-v1",
+  "generated": "2026-08-19T07:29:07",
+  "canonical_pretraining": [
+    {
+      "id": "mocha_v3_nomaelite_source",
+      "method": "MOCHA",
+      "source": "pretraining/MOCHA/model_last.pth",
+      "config": "pretraining/MOCHA/config.py",
+      "sha256": "f240d9f08a66fc391a5c3443d0b0cdcb4bd2a0948635bdae6e984c1e61f7c551",
+      "size_bytes": 2202209313,
+      "size_human": "2.05 GB",
+      "inspection": {
+        "container_keys": [
+          "best_metric_value",
+          "epoch",
+          "optimizer",
+          "scaler",
+          "scheduler",
+          "state_dict"
+        ],
+        "epoch": 1,
+        "best_metric_value": -Infinity,
+        "state_dict_key_count": 972,
+        "tensor_key_count": 972,
+        "tensor_numel": 275335303,
+        "dtype_counts": {
+          "torch.float32": 972
+        },
+        "student_backbone_tensor_keys": 0,
+        "other_backbone_tensor_keys": 476
+      },
+      "status": "LOCKED_CANONICAL_SSL",
+      "initialization": "MOCHA lineage initialized from the official Utonia pretraining checkpoint; see LICENSE-WEIGHTS.md for provenance and applicable terms."
+    },
+    {
+      "id": "multimocha15k_source",
+      "method": "MultiMOCHA-15k",
+      "source": "pretraining/MultiMOCHA-15k/model_last.pth",
+      "config": "pretraining/MultiMOCHA-15k/config.py",
+      "sha256": "499f48d77f679c787f115d1696208369011648338bf82ecef2aa19b434a16a97",
+      "size_bytes": 2202209313,
+      "size_human": "2.05 GB",
+      "inspection": {
+        "container_keys": [
+          "best_metric_value",
+          "epoch",
+          "optimizer",
+          "scaler",
+          "scheduler",
+          "state_dict"
+        ],
+        "epoch": 20,
+        "best_metric_value": -Infinity,
+        "state_dict_key_count": 972,
+        "tensor_key_count": 972,
+        "tensor_numel": 275335303,
+        "dtype_counts": {
+          "torch.float32": 972
+        },
+        "student_backbone_tensor_keys": 0,
+        "other_backbone_tensor_keys": 476
+      },
+      "status": "LOCKED_CANONICAL_SSL",
+      "initialization": "Scratch initialization (weight = None). Does not descend from the Utonia pretrained checkpoint."
+    }
+  ],
+  "derived_multimocha_transfer_artifacts": {
+    "note": "Internal compatibility/conversion artifacts were used to load the canonical MultiMOCHA-15k representation into downstream models. They are not separate pretrained representations and are not part of the primary public model set."
+  },
+  "policy": {
+    "canonical_ssl": "The full model_last.pth files are the authoritative learned-representation checkpoints because downstream lineages explicitly load them.",
+    "derived": "Wrapper/in4/backbone-only artifacts are transfer helpers, not separate pretrained methods.",
+    "50k": "The MultiMOCHA-50k scaling diagnostic is excluded from the primary release model set."
+  }
+}

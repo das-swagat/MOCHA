@@ -1,0 +1,114 @@
+{
+  "dataset": "DALES",
+  "num_classes": 8,
+  "backbone_out_channels": 54,
+  "backbone": {
+    "type": "PT-v3m3",
+    "in_channels": 4,
+    "order": [
+      "z",
+      "z-trans",
+      "hilbert",
+      "hilbert-trans"
+    ],
+    "stride": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "enc_depths": [
+      3,
+      3,
+      3,
+      12,
+      3
+    ],
+    "enc_channels": [
+      54,
+      108,
+      216,
+      432,
+      576
+    ],
+    "enc_num_head": [
+      3,
+      6,
+      12,
+      24,
+      32
+    ],
+    "enc_patch_size": [
+      256,
+      256,
+      256,
+      256,
+      256
+    ],
+    "dec_depths": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "dec_channels": [
+      54,
+      108,
+      216,
+      432
+    ],
+    "dec_num_head": [
+      3,
+      6,
+      12,
+      24
+    ],
+    "dec_patch_size": [
+      256,
+      256,
+      256,
+      256
+    ],
+    "mlp_ratio": 4,
+    "qkv_bias": true,
+    "qk_scale": null,
+    "attn_drop": 0.0,
+    "proj_drop": 0.0,
+    "drop_path": 0.3,
+    "shuffle_orders": true,
+    "pre_norm": true,
+    "enable_rpe": false,
+    "enable_flash": false,
+    "upcast_attention": false,
+    "upcast_softmax": false,
+    "traceable": false,
+    "mask_token": false,
+    "enc_mode": false,
+    "freeze_encoder": false,
+    "rope_base": 10,
+    "shift_coords": null,
+    "jitter_coords": 1.1,
+    "rescale_coords": 1.2
+  },
+  "class_names": [
+    "ground",
+    "vegetation",
+    "cars",
+    "trucks",
+    "powerlines",
+    "fences",
+    "poles",
+    "buildings"
+  ],
+  "input_features": [
+    "x",
+    "y",
+    "z",
+    "strength"
+  ],
+  "strength_source": "intensity.npy via dales_pointssm_mocha adapter",
+  "paper_reference": {
+    "multimocha_single_view_mIoU": 0.7872,
+    "targetmocha_single_view_mIoU": 0.7869
+  }
+}

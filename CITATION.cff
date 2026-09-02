@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use MOCHA in your research, please cite the associated MOCHA paper using these metadata."
+
+title: "MOCHA: Occupancy-Guided Self-Supervised LiDAR Representation Learning for Cross-Domain Semantic Segmentation"
+
+authors:
+  - family-names: Das
+    given-names: Swagat
+  - family-names: Cobilean
+    given-names: Victor
+  - family-names: Mavikumbure
+    given-names: Harindra S.
+  - family-names: Drake
+    given-names: Devin
+  - family-names: Wickramasinghe
+    given-names: Chathurika S.
+  - family-names: McDaniel
+    given-names: Lynn
+  - family-names: Kirby
+    given-names: Chuck
+  - family-names: Manic
+    given-names: Milos
+
+repository-code: "https://github.com/das-swagat/MOCHA"
+license: MIT
+
+references:
+  - type: software
+    title: "LiDAR Research Atlas v0.2.2: A Provenance-Tracked Catalog of LiDAR Datasets, Methods, and Ecosystem Resources"
+    authors:
+      - family-names: Das
+        given-names: Swagat
+    version: "0.2.2"
+    doi: "10.5281/zenodo.21781339"
+    repository-code: "https://github.com/das-swagat/lidar-research-atlas"

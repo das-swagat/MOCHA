@@ -1,0 +1,34 @@
+# Model weights belong on Hugging Face
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+
+# Datasets / generated artifacts
+/data/
+/datasets/
+/outputs/
+/runs/
+/logs/
+/wandb/
+/checkpoints/
+/results/
+/cache/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Editors / OS
+.DS_Store
+.vscode/
+.idea/
+
+# Credentials
+.env
+.env.*
+*.key
+*.pem
+*token*

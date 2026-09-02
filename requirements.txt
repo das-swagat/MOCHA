@@ -1,0 +1,7 @@
+# Platform-neutral utilities.
+# Install PyTorch / CUDA / spconv separately for your platform.
+numpy<=1.26.4
+scipy
+einops
+timm
+huggingface_hub

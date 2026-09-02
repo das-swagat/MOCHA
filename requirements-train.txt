@@ -1,0 +1,13 @@
+-r requirements.txt
+open3d
+
+# CUDA-specific training dependencies are intentionally not pinned here.
+# The validated research environments are provided in:
+#
+# environment/environment_pointcept.yml
+# environment/environment_utonia.yml
+#
+# Validated research stack:
+# PyTorch 2.5.0
+# CUDA 12.4
+# spconv-cu124

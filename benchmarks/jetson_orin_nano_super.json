@@ -1,0 +1,177 @@
+{
+  "schema_version": "1.0",
+  "benchmark": "MOCHA Jetson edge inference",
+  "hardware": {
+    "device": "NVIDIA Jetson Orin Nano Super Developer Kit",
+    "memory_gb": 8,
+    "power_mode_w": 25,
+    "architecture": "aarch64",
+    "cpu": "6-core Arm Cortex-A78AE",
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "5.15.148-tegra",
+    "l4t": "R36.4.7"
+  },
+  "runtime": {
+    "nvidia_container_release": "25.05",
+    "pytorch": "2.8.0a0+5228986c39.nv25.05",
+    "cuda_reported_by_pytorch": "12.9",
+    "checkpoint_storage": "FP16",
+    "parameter_residency": "FP32",
+    "inference_autocast": "CUDA FP16",
+    "inference_mode": true,
+    "tta": false,
+    "tensorrt": false,
+    "int8": false,
+    "cuda_synchronized_timing": true,
+    "default_warmup_runs": 3
+  },
+  "timing_scope": "Synchronized neural-network inference after benchmark input preparation; not end-to-end sensor-to-prediction latency.",
+  "results": [
+    {
+      "dataset": "nuScenes",
+      "model": "MOCHA",
+      "points": 4000,
+      "parameters": 137275882,
+      "median_ms": 1135.2,
+      "p95_ms": 1140.2,
+      "throughput_kpts_s": 3.52,
+      "peak_cuda_mib": 1080.9
+    },
+    {
+      "dataset": "SemanticKITTI",
+      "model": "MultiMOCHA FT",
+      "points": 16000,
+      "parameters": 137280043,
+      "median_ms": 2099.8,
+      "p95_ms": 2102.8,
+      "throughput_kpts_s": 7.62,
+      "peak_cuda_mib": 1064.3
+    },
+    {
+      "dataset": "SemanticKITTI",
+      "model": "TargetMOCHA",
+      "points": 16000,
+      "parameters": 137280043,
+      "median_ms": 2103.9,
+      "p95_ms": 2106.3,
+      "throughput_kpts_s": 7.61,
+      "peak_cuda_mib": 1064.3
+    },
+    {
+      "dataset": "Toronto3D",
+      "model": "MultiMOCHA FT",
+      "points": 11035,
+      "parameters": 157734224,
+      "median_ms": 930.8,
+      "p95_ms": 945.0,
+      "throughput_kpts_s": 11.86,
+      "peak_cuda_mib": 836.5,
+      "timed_runs": 20
+    },
+    {
+      "dataset": "Toronto3D",
+      "model": "TargetMOCHA",
+      "points": 11035,
+      "parameters": 157734224,
+      "median_ms": 970.9,
+      "p95_ms": 981.3,
+      "throughput_kpts_s": 11.37,
+      "peak_cuda_mib": 836.5,
+      "timed_runs": 20
+    },
+    {
+      "dataset": "RELLIS-3D",
+      "model": "MultiMOCHA FT",
+      "points": 9000,
+      "parameters": 157734774,
+      "median_ms": 2111.6,
+      "p95_ms": 2115.8,
+      "throughput_kpts_s": 4.26,
+      "peak_cuda_mib": 1242.1
+    },
+    {
+      "dataset": "RELLIS-3D",
+      "model": "TargetMOCHA",
+      "points": 9000,
+      "parameters": 157734774,
+      "median_ms": 2100.2,
+      "p95_ms": 2103.8,
+      "throughput_kpts_s": 4.29,
+      "peak_cuda_mib": 1242.1
+    },
+    {
+      "dataset": "SemanticUSL",
+      "model": "MultiMOCHA FT",
+      "points": 5000,
+      "parameters": 157735099,
+      "median_ms": 1353.4,
+      "p95_ms": 1361.4,
+      "throughput_kpts_s": 3.69,
+      "peak_cuda_mib": 1109.7
+    },
+    {
+      "dataset": "SemanticUSL",
+      "model": "TargetMOCHA",
+      "points": 5000,
+      "parameters": 157735099,
+      "median_ms": 1364.2,
+      "p95_ms": 1367.6,
+      "throughput_kpts_s": 3.67,
+      "peak_cuda_mib": 1109.7
+    },
+    {
+      "dataset": "DALES",
+      "model": "MultiMOCHA FT",
+      "points": 18000,
+      "parameters": 157734224,
+      "median_ms": 688.4,
+      "p95_ms": 692.9,
+      "throughput_kpts_s": 26.15,
+      "peak_cuda_mib": 838.3
+    },
+    {
+      "dataset": "DALES",
+      "model": "TargetMOCHA",
+      "points": 18000,
+      "parameters": 157734224,
+      "median_ms": 710.1,
+      "p95_ms": 713.2,
+      "throughput_kpts_s": 25.35,
+      "peak_cuda_mib": 838.3
+    }
+  ],
+  "operating_points": {
+    "nuScenes": {
+      "packaged_points": 4000,
+      "observed_unstable_points": 5000
+    },
+    "SemanticKITTI": {
+      "packaged_points": 16000,
+      "observed_unstable_points": 18000
+    },
+    "Toronto3D": {
+      "packaged_points": 11035,
+      "additional_successful_stress_points": 25067
+    },
+    "RELLIS-3D": {
+      "packaged_points": 9000,
+      "observed_unstable_points": 10000
+    },
+    "SemanticUSL": {
+      "packaged_points": 5000,
+      "observed_unstable_points": 6000
+    },
+    "DALES": {
+      "packaged_points": 18000,
+      "observed_unstable_points": 24068
+    }
+  },
+  "limitations": [
+    "Not end-to-end sensor-pipeline timing.",
+    "No energy-per-inference measurement.",
+    "No TensorRT benchmark.",
+    "No INT8 benchmark.",
+    "No TTA in edge deployment.",
+    "Observed point-count stability boundaries are empirical for the validated runtime and samples."
+  ]
+}

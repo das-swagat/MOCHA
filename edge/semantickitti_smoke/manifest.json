@@ -1,0 +1,61 @@
+{
+  "dataset": "SemanticKITTI",
+  "sample": "000000",
+  "split": "val / sequence 08",
+  "source_processed_points": 94444,
+  "processed_points": 16000,
+  "sample_selection": "Deterministic linspace-index subset after exact final validation preprocessing.",
+  "feature_layout": "XYZ + zero-filled color(3) + zero-filled normal(3)",
+  "validation_preprocessing": "RandomScale(0.2), GridSample(0.01), NormalizeColor, ToTensor, Collect",
+  "models": {
+    "baseline": {
+      "weight": "semantickitti_baseline_59.26_fp16_storage.pth",
+      "paper_mIoU": 0.5926,
+      "source_best_metric_value": 0.5925905034481881,
+      "source_checkpoint": "05_runs/semantic_kitti/20260619_121153_semkitti_e20_from_multimocha15k_baseline_patch256_goose/model/model_best.pth"
+    },
+    "targetmocha": {
+      "weight": "semantickitti_targetmocha_59.52_fp16_storage.pth",
+      "paper_mIoU": 0.5952,
+      "source_best_metric_value": 0.5951896763442558,
+      "source_checkpoint": "05_runs/semantic_kitti/20260619_121153_semkitti_e20_from_multimocha15k_targetmocha00025_patch256_goose/model/model_best.pth"
+    }
+  },
+  "runtime": "FP16 storage; FP32-resident model; CUDA autocast FP16",
+  "targetmocha_occ_head": "training-only; removed from deployment state",
+  "source_checkpoint_sha256": {
+    "baseline": "095fe10f8c7e08a1bdc41612087d6b9db8f3db79f4469c4d1ed71c0059f0f784",
+    "targetmocha": "f49795c543699cb94606e1bed92343d77c6958f3eb255883ac4c4b2e147fb830"
+  },
+  "edge_weight_sha256": {
+    "baseline": "3cff2bd22894ce6494c4fb693d20a00935502a15987de7b52e4ad9492bc1e29b",
+    "targetmocha": "5ceff41240703d41e44ba53a736e8ba67eb985337720345fe80281b8e60a38e2"
+  },
+  "edge_weight_bytes": {
+    "baseline": 274733387,
+    "targetmocha": 274734839
+  },
+  "largest_tested_stable_points": 16000,
+  "tested_unstable_points": 18000,
+  "jetson_validation": {
+    "hardware": "NVIDIA Jetson Orin Nano Super",
+    "power_mode": "25W",
+    "precision": "FP16 CUDA autocast; FP32-resident model",
+    "baseline": {
+      "paper_mIoU": 0.5926,
+      "mean_ms": 2099.615,
+      "median_ms": 2099.767,
+      "p95_ms": 2102.789,
+      "points_per_s": 7619.9,
+      "peak_cuda_MiB": 1064.3
+    },
+    "targetmocha": {
+      "paper_mIoU": 0.5952,
+      "mean_ms": 2103.633,
+      "median_ms": 2103.887,
+      "p95_ms": 2106.26,
+      "points_per_s": 7605.0,
+      "peak_cuda_MiB": 1064.3
+    }
+  }
+}

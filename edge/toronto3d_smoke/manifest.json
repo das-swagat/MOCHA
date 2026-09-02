@@ -1,0 +1,12 @@
+{
+  "dataset": "Toronto3D",
+  "model": "TargetMOCHA",
+  "paper_mIoU": 0.5896,
+  "source_checkpoint_sha256": "002d7b228b9b04343beabe32d4a1dabb8ac4fea300421feae63cdaf608682211",
+  "edge_weight_sha256": "67b4bac9f8ba649c1b8262bb368d026dfbd957f4b9b075f88ae410347695692a",
+  "edge_weight_bytes": 315686679,
+  "sample": "L002_x0003_y0006",
+  "raw_points": 12702,
+  "processed_points": 11035,
+  "note": "First Jetson hardware gate. FP16 is storage compression; runtime loads model FP32 and uses CUDA autocast FP16."
+}

@@ -1,0 +1,14 @@
+{
+  "baseline": {
+    "weight": "rellis3d_baseline_26.67_fp16_storage.pth",
+    "paper_mIoU": 0.2667,
+    "source_best_metric_value": 0.26668292859142073,
+    "source_checkpoint": "05_runs/rellis3d/20260614_101936_rellis3d_e20_from_multimocha15k_baseline_goose/model/model_best.pth"
+  },
+  "targetmocha": {
+    "weight": "rellis3d_targetmocha_26.78_fp16_storage.pth",
+    "paper_mIoU": 0.2678,
+    "source_best_metric_value": 0.26781986919722073,
+    "source_checkpoint": "05_runs/rellis3d/20260614_231907_rellis3d_e20_from_multimocha15k_targetmocha005_goose/model/model_best.pth"
+  }
+}

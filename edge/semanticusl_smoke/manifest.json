@@ -1,0 +1,72 @@
+{
+  "dataset": "SemanticUSL",
+  "sample": "000000",
+  "split": "val",
+  "source_processed_points": 70245,
+  "processed_points": 5000,
+  "sample_selection": "Deterministic linspace-index subset after exact final validation preprocessing.",
+  "feature_layout": "XYZ + color(3) + normal(3)",
+  "validation_preprocessing": "RandomScale(0.2), GridSample(0.01), NormalizeColor, ToTensor, Collect",
+  "models": {
+    "baseline": {
+      "weight": "semanticusl_baseline_23.94_fp16_storage.pth",
+      "paper_mIoU": 0.2394,
+      "source_best_metric_value": 0.23936456482107088,
+      "source_checkpoint": "05_runs/semanticusl_labeled4/20260612_103557_semanticusl_labeled4_e20_safece_from_multimocha15k_baseline_goose/model/model_best.pth"
+    },
+    "targetmocha": {
+      "weight": "semanticusl_targetmocha_24.51_fp16_storage.pth",
+      "paper_mIoU": 0.2451,
+      "source_best_metric_value": 0.2451313777805739,
+      "source_checkpoint": "05_runs/semanticusl_labeled4/20260613_174315_semanticusl_labeled4_e20_safece_from_multimocha15k_targetmocha0005_goose/model/model_best.pth"
+    }
+  },
+  "runtime": "FP16 storage; FP32-resident model; CUDA autocast FP16",
+  "targetmocha_occ_head": "training-only; removed from deployment state",
+  "source_checkpoint_sha256": {
+    "baseline": "cdc4530a6efd286ffd07e81fded58c55710e79f04e5afee70491c2206a1c7b41",
+    "targetmocha": "db91763d65bac4d132f126ef4c8a97e42270396f621f3e518a88f52f21c13ab5"
+  },
+  "edge_weight_sha256": {
+    "baseline": "5f8fae6e4b7c8a746a98e777b2196ce8ed255fc99753964e9659267240e64ad7",
+    "targetmocha": "32b8c7b5f36847486960bfb4e0e4057aa91642d741f3549a4eee126c5f3282b2"
+  },
+  "edge_weight_bytes": {
+    "baseline": 315707539,
+    "targetmocha": 315709543
+  },
+  "largest_tested_stable_points": 5000,
+  "smallest_tested_unstable_points": 6000,
+  "additional_tested_unstable_points": [
+    8000,
+    9000,
+    18000
+  ],
+  "jetson_validation": {
+    "hardware": "NVIDIA Jetson Orin Nano Super",
+    "power_mode": "25W",
+    "precision": "FP16 CUDA autocast; FP32-resident model",
+    "largest_tested_stable_points": 5000,
+    "smallest_tested_unstable_points": 6000,
+    "baseline": {
+      "paper_mIoU": 0.2394,
+      "parameters": 157735099,
+      "mean_ms": 1354.401,
+      "median_ms": 1353.401,
+      "p95_ms": 1361.421,
+      "fps_from_median": 0.739,
+      "points_per_s": 3694.4,
+      "peak_cuda_MiB": 1109.7
+    },
+    "targetmocha": {
+      "paper_mIoU": 0.2451,
+      "parameters": 157735099,
+      "mean_ms": 1364.027,
+      "median_ms": 1364.154,
+      "p95_ms": 1367.631,
+      "fps_from_median": 0.733,
+      "points_per_s": 3665.3,
+      "peak_cuda_MiB": 1109.7
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "dataset": "nuScenes",
+  "num_classes": 16,
+  "backbone_out_channels": 1386,
+  "backbone": {
+    "type": "PT-v3m3",
+    "in_channels": 9,
+    "order": [
+      "z",
+      "z-trans",
+      "hilbert",
+      "hilbert-trans"
+    ],
+    "stride": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "enc_depths": [
+      3,
+      3,
+      3,
+      12,
+      3
+    ],
+    "enc_channels": [
+      54,
+      108,
+      216,
+      432,
+      576
+    ],
+    "enc_num_head": [
+      3,
+      6,
+      12,
+      24,
+      32
+    ],
+    "enc_patch_size": [
+      1024,
+      1024,
+      1024,
+      1024,
+      1024
+    ],
+    "mlp_ratio": 4,
+    "qkv_bias": true,
+    "qk_scale": null,
+    "attn_drop": 0.0,
+    "proj_drop": 0.0,
+    "drop_path": 0.3,
+    "shuffle_orders": true,
+    "pre_norm": true,
+    "enable_rpe": false,
+    "enable_flash": false,
+    "upcast_attention": false,
+    "upcast_softmax": false,
+    "traceable": false,
+    "mask_token": false,
+    "enc_mode": true,
+    "freeze_encoder": false,
+    "rope_base": 10,
+    "shift_coords": null,
+    "jitter_coords": 1.1,
+    "rescale_coords": 1.2
+  },
+  "class_names": [
+    "barrier",
+    "bicycle",
+    "bus",
+    "car",
+    "construction_vehicle",
+    "motorcycle",
+    "pedestrian",
+    "traffic_cone",
+    "trailer",
+    "truck",
+    "driveable_surface",
+    "other_flat",
+    "sidewalk",
+    "terrain",
+    "manmade",
+    "vegetation"
+  ],
+  "feature_layout": [
+    "coord_x",
+    "coord_y",
+    "coord_z",
+    "color_0",
+    "color_1",
+    "color_2",
+    "normal_0",
+    "normal_1",
+    "normal_2"
+  ],
+  "dataset_adapter": "NuScenesImagePointDataset",
+  "if_img": false,
+  "if_sweep": true,
+  "sweeps": 3,
+  "sweep_gap": 1,
+  "validation_grid_size": 0.01
+}

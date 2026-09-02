@@ -1,0 +1,64 @@
+{
+  "dataset": "DALES",
+  "purpose": "Jetson smoke and single-view edge benchmark",
+  "sample": "5140_54390_new_1-2",
+  "sample_index": 0,
+  "processed_points": 18000,
+  "feature_layout": "coord XYZ + strength mapped from intensity.npy",
+  "sample_preprocessing": "exact final validation dataset adapter/transforms",
+  "models": {
+    "multimocha": {
+      "weight": "dales_multimocha_78.72_fp16_storage.pth",
+      "paper_single_view_mIoU": 0.7872,
+      "source_checkpoint": "05_runs/dales_mocha/20260816_092455_job2288_dales_pointssm_multimocha_stage3_cont50_lr5e5_from_stage2best/model/model_best.pth",
+      "source_best_metric_value": 0.7871756819346096
+    },
+    "targetmocha": {
+      "weight": "dales_targetmocha_78.69_fp16_storage.pth",
+      "paper_single_view_mIoU": 0.7869,
+      "source_checkpoint": "05_runs/dales_mocha/20260816_092455_job2289_dales_pointssm_targetmocha001_stage3_cont50_lr5e5_from_stage2best/model/model_best.pth",
+      "source_best_metric_value": 0.7869088365477195
+    }
+  },
+  "runtime": "FP16 storage; FP32-resident model; CUDA autocast FP16",
+  "targetmocha_occ_head": "training-only; omitted from deployment state",
+  "source_checkpoint_sha256": {
+    "multimocha": "570aac79089a1a119d2dc25950521975609ceb3aeeea791cec00ffea120030a2",
+    "targetmocha": "e37ad7c02e932a43ecaed8beeec9bf298d35eb86595b322e91ec95fbdb215359"
+  },
+  "edge_weight_sha256": {
+    "multimocha": "f3de9d04fc8f329d52c9da2b3b2f8157fb5b42dd8a151c243b4e0faf753eff77",
+    "targetmocha": "cf4fc1dd9330767951aaca5611865f7a871c66cd37edbf2f0f2652cd46bbcddd"
+  },
+  "edge_weight_bytes": {
+    "multimocha": 315690339,
+    "targetmocha": 315691007
+  },
+  "note": "DALES TTA is benchmark-only and is not used on Jetson.",
+  "source_preprocessed_points": 24068,
+  "sample_selection": "Deterministic linspace-index subset of the exact final 24,068-point preprocessed DALES validation sample.",
+  "jetson_validation": {
+    "date": "2026-08-19",
+    "hardware": "NVIDIA Jetson Orin Nano Super",
+    "power_mode": "25W",
+    "precision": "FP16 CUDA autocast; FP32-resident model",
+    "largest_tested_stable_points": 18000,
+    "tested_unstable_points": 24068,
+    "multimocha": {
+      "median_ms": 688.357,
+      "p95_ms": 692.938,
+      "mean_ms": 685.475,
+      "fps_from_median": 1.453,
+      "points_per_s_from_median": 26149.2,
+      "peak_cuda_MiB": 838.3
+    },
+    "targetmocha": {
+      "median_ms": 710.126,
+      "p95_ms": 713.171,
+      "mean_ms": 705.816,
+      "fps_from_median": 1.408,
+      "points_per_s_from_median": 25347.6,
+      "peak_cuda_MiB": 838.3
+    }
+  }
+}
