@@ -54,13 +54,13 @@ The canonical source pretraining configuration uses:
 
 The objective is:
 
-$$
+```math
 \mathcal{L}_{\mathrm{MOCHA}}
 =
 \mathcal{L}_{\mathrm{align}}
 +
 \lambda_{\mathrm{occ}}\mathcal{L}_{\mathrm{occ}}.
-$$
+```
 
 ### MultiMOCHA
 
@@ -87,15 +87,15 @@ The manifest contains repeated sampling where a source dataset has fewer than 3,
 
 TargetMOCHA starts from the same MultiMOCHA-15k representation used by the ordinary supervised fine-tuning baseline. It adds a **new target-domain occupancy head** during adaptation rather than reusing the source pretraining head.
 
-For target dataset \(D\),
+For target dataset $D$,
 
-$$
-\mathcal{L}_{\mathrm{Target}}^{D}
+```math
+\mathcal{L}_{\mathrm{Target}}^{(D)}
 =
-\mathcal{L}_{\mathrm{seg}}^{D}
+\mathcal{L}_{\mathrm{seg}}^{(D)}
 +
 \alpha_D \mathcal{L}_{\mathrm{occ}}.
-$$
+```
 
 The target-domain occupancy scales are **0.2 m, 0.4 m, and 0.8 m**. The auxiliary occupancy head is removed from the final semantic inference path.
 
