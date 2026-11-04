@@ -469,6 +469,6 @@ Citation metadata will be finalized together with the manuscript metadata. `CITA
 
 ## Status
 
-MOCHA is currently maintained as a **private research release candidate** while the manuscript and public artifacts are finalized. GitHub and Hugging Face will remain private until the appropriate manuscript/review stage.
+MOCHA is maintained as a public research release accompanying the manuscript. Paper and citation links will be updated as the manuscript progresses from submission to public preprint and final publication.
 
-The final public release is intended to provide the paper, source modifications, canonical configurations, model weights, provenance records, qualitative figures, reproducibility metadata, and deployment artifacts together.
+The public release provides the source modifications, canonical configurations, model weights, provenance records, qualitative figures, reproducibility metadata, and deployment artifacts accompanying the study.
