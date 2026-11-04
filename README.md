@@ -12,7 +12,7 @@ MOCHA is implemented on the Pointcept research stack with PTv3/Utonia-style back
 **Models:** https://huggingface.co/das-swagat/MOCHA  
 **Paper:** manuscript in preparation
 
-> This repository is currently maintained as a private release candidate. Public paper and citation links will be added with the manuscript/public release.
+> This repository accompanies the MOCHA research release. The public paper link and final citation metadata will be added when available.
 
 ---
 
