@@ -24,7 +24,7 @@ MOCHA is organized around three connected contributions:
    A student-teacher cross-view alignment objective is paired with a compact 3-bit multi-scale local-support target. The auxiliary target is computed directly from point neighborhoods and requires no semantic labels.
 
 2. **MultiMOCHA — heterogeneous outdoor LiDAR pretraining.**  
-   The same self-supervised objective is applied across nuScenes, SemanticKITTI, Toronto3D, RELLIS-3D, and SemanticUSL. The canonical **MultiMOCHA-15k** pretraining set contains 15,000 samples, with 3,000 sampled entries per dataset.
+   The same self-supervised objective is applied across nuScenes, SemanticKITTI, Toronto3D, RELLIS-3D, and SemanticUSL. The canonical **MultiMOCHA-15k** pretraining manifest contains 15,000 exposure entries, with 3,000 entries sampled per dataset. The manifest contains 9,802 unique scan roots.
 
 3. **TargetMOCHA — occupancy-aware target adaptation.**  
    During supervised fine-tuning, a newly initialized target-domain occupancy head regularizes the semantic objective. The occupancy head is training-only and is not required for deployed semantic inference.
@@ -110,9 +110,9 @@ The target-domain occupancy scales are **0.2 m, 0.4 m, and 0.8 m**. The auxiliar
 | Utonia reference | 78.60 | — | — |
 | **MOCHA** | **80.57** | **87.89** | **94.48** |
 
-**MOCHA improves the Utonia reference by +1.97 mIoU.**
+**MOCHA is +1.97 mIoU above the Utonia-based development reference under this protocol.**
 
-This comparison isolates the representation-learning contribution rather than claiming a new segmentation backbone.
+The 78.60 result is a development reference under our protocol. The progression is not a controlled component-wise ablation or a protocol-matched comparison with the published Utonia benchmark.
 
 ### Cross-Domain Adaptation
 
@@ -127,7 +127,7 @@ TargetMOCHA gives consistent, modest gains over matched ordinary MultiMOCHA fine
 
 ### DALES
 
-DALES is included as an aerial-domain extension.
+DALES is excluded from MultiMOCHA pretraining and evaluated after supervised downstream adaptation.
 
 | Variant | Single-view mIoU |
 |---|---:|

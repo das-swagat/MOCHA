@@ -9,9 +9,9 @@ percentage-point changes.
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | Utonia FT continuation | 78.60 | 66.35 | 66.68 | 38.21 | 80.66 | 81.18 | 60.84 | 70.85 |
 | MOCHA v2 LiDAR-only | 78.95 | 68.85 | 69.44 | 43.90 | 80.83 | 83.58 | 64.82 | 71.14 |
-| + local occupancy | 79.59 | 69.33 | 69.94 | 44.11 | 81.61 | 84.11 | 64.98 | 71.82 |
-| + 2-sweep continuation | 79.87 | 70.96 | 72.80 | 48.95 | 83.60 | 85.84 | 65.09 | 71.30 |
-| + 3-sweep low-LR continuation | **80.57** | **72.16** | **73.93** | **52.65** | **84.44** | 84.69 | **67.35** | 71.66 |
+| MOCHA v2 with local-support objective | 79.59 | 69.33 | 69.94 | 44.11 | 81.61 | 84.11 | 64.98 | 71.82 |
+| MOCHA with 2-sweep continuation | 79.87 | 70.96 | 72.80 | 48.95 | 83.60 | 85.84 | 65.09 | 71.30 |
+| Final MOCHA with 3-sweep low-LR continuation | **80.57** | **72.16** | **73.93** | **52.65** | **84.44** | 84.69 | **67.35** | 71.66 |
 | Delta vs. Utonia | **+1.97** | **+5.81** | **+7.24** | **+14.44** | **+3.78** | **+3.51** | **+6.51** | **+0.81** |
 
 Final MOCHA also reaches:
@@ -22,8 +22,8 @@ Final MOCHA also reaches:
 App. is the application-focused mean used in the paper. VRU is the mean IoU
 of bicycle, motorcycle, and pedestrian.
 
-The improvements are class-selective rather than uniform; the paper should be
-consulted for the complete classwise analysis.
+The improvements are class-selective rather than uniform; selected class-level
+changes are summarized in the paper.
 
 ## MultiMOCHA to TargetMOCHA transfer
 
@@ -40,7 +40,7 @@ TargetMOCHA adds the target-domain occupancy/support objective during
 fine-tuning. Its auxiliary occupancy head is training-only and is not required
 for semantic inference.
 
-## DALES unseen aerial transfer
+## DALES pretraining-excluded aerial transfer
 
 DALES was excluded from MultiMOCHA pretraining.
 
