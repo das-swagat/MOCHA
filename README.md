@@ -12,7 +12,7 @@ MOCHA is implemented on the Pointcept research stack with PTv3/Utonia-style back
 **Models:** https://huggingface.co/das-swagat/MOCHA  
 **Paper:** manuscript in preparation
 
-> This repository accompanies the MOCHA research release. The public paper link and final citation metadata will be added when available.
+> This repository accompanies the MOCHA research release. The public paper link and publication details will be updated when available.
 
 ---
 
@@ -451,7 +451,7 @@ This distinction between aggregate metrics, local qualitative evidence, and depl
 
 MOCHA builds on third-party research software, including Pointcept and PTv3/Utonia-derived components. Code licensing, model-weight terms, dataset terms, and third-party notices are documented separately so that rights applicable to source code, released weights, and external datasets are not conflated.
 
-The finalized public release will include:
+The public repository includes:
 
 - `LICENSE`
 - `LICENSE-WEIGHTS.md`
@@ -463,7 +463,7 @@ No third-party datasets are distributed in this repository.
 
 ## Citation
 
-Citation metadata will be finalized together with the manuscript metadata. `CITATION.cff` is included in the repository structure and will contain the final author list, title, and publication information before the repository is made public.
+`CITATION.cff` contains the MOCHA manuscript title and confirmed author metadata. The venue, DOI, and paper link will be updated when available.
 
 ---
 
